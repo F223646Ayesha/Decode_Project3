@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Books | BookTracker</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">📚 BookTracker</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <span id="navUser"></span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>Add a Book</h2>
+      <form id="bookForm">
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="text" id="isbn" placeholder="ISBN (optional)" />
+        <input type="number" id="publishedYear" placeholder="Published Year" />
+        <input type="text" id="genreNames" placeholder="Genres, comma separated (e.g. Fantasy, Sci-Fi)" />
+        <button type="submit">Add Book</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Library</h2>
+      <div id="bookList" class="book-list"></div>
+    </section>
+  </main>
+
+  <template id="bookCardTemplate">
+    <div class="book-card">
+      <h3 class="b-title"></h3>
+      <p class="b-author"></p>
+      <p class="b-genres"></p>
+      <p class="b-year"></p>
+      <div class="b-reviews"></div>
+      <form class="review-form">
+        <select class="rating">
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★</option>
+          <option value="3">★★★</option>
+          <option value="2">★★</option>
+          <option value="1">★</option>
+        </select>
+        <input type="text" class="comment" placeholder="Your review..." />
+        <button type="submit">Submit Review</button>
+      </form>
+      <button class="delete-book">Delete Book</button>
+    </div>
+  </template>
+
+  <script src="js/api.js"></script>
+  <script src="js/books.js"></script>
+</body>
+</html>
